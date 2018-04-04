@@ -36,7 +36,7 @@ main {
 overflow:hidden;
 }
 
-#houseImages { position:relative; width:4000px; transition: all .5s; }
+#houseImages { position:relative; width:5000px; transition: all .5s; }
 #houseImages img { float:left; }
 
 #bottomNav { margin-top:30px; }
@@ -80,6 +80,9 @@ overflow:hidden;
 
 .arryn { background-position:-253px -54px; }
 .arryn:hover { background-position:-253px 0px; }
+
+.targaryen { background-position:-304px -54px; }
+.targaryen:hover { background-position:-304px 0px; }
 /* ----- end image sprite ----- */
 
 /* ----- classes for transitions ----- */
@@ -110,8 +113,8 @@ overflow:hidden;
 
 .close-lightbox {
 	position: absolute;
-	right: 12px;
-	top: 12px;
+  right: 150px;
+top: 165px;
 	font-family: arial, helvetica, sans-serif;
 	font-size: 2em;
 	font-weight: bold;
@@ -129,7 +132,7 @@ video {
 
 .controls {margin-top: 1.5em; border: thin dashed white;}
 
-[data-icon]:not([data-icon:pause-circle]):not([data-icon=play-circle]) {
+[data-icon]:not([data-icon:pause-circle]):not([data-icon:play-circle]) {
   font-size: 2em;
 }
 
@@ -145,5 +148,12 @@ video {
 }
 .controls ul li {
   display: inline-block;
-  padding: 0.1em;
+  padding: 0.6em;
+}
+.controls ul li:hover{
+  background-color: red;
+   padding-bottom: 5px;
+   border-radius: 50px;
+   
+
 }

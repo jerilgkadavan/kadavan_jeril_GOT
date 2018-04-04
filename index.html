@@ -5,9 +5,6 @@
 <title>DOM Traversal</title>
 <link href="css/meyerReset.css" rel="stylesheet" type="text/css" media="screen">
 <link href="css/GOT_master.css" rel="stylesheet" type="text/css" media="screen">
-
-<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous">
-  </script>
 </head>
 
 <body>
@@ -21,6 +18,8 @@
     		<img src="images/tully.jpg"/>
     		<img src="images/greyjoy.jpg"/>
     		<img src="images/arryn.jpg"/>
+        <img src="images/targaryen.jpg"/>
+
         </div>
     </section>
 
@@ -33,35 +32,43 @@
             <li><div class="sigilContainer tully" data-offset="3"></div></li>
             <li><div class="sigilContainer greyjoy" data-offset="4"></div></li>
             <li><div class="sigilContainer arryn" data-offset="5"></div></li>
+            <li><div class="sigilContainer targaryen" data-offset="6"></div></li>
         </ul>
     </nav>
 
-    <h1 id="tagline">Game Of Thrones</h1><!-- replace this with the house name -->
+    <h1 id="tagLine">GAME OF THRONES</h1><!-- replace this with the house name -->
 
     <p class="house-info"></p><!-- replace this with house details (github gist for details) -->
 </main>
 
 <section class="lightbox">
-  <h1 id="videoHeading"></h1>
     <span class="close-lightbox">x</span>
     <!-- add video here with sources for fallback / standards -->
         <video>
           <source src="video/House-Stark.mp4" type="video/mp4">
         </video>
+
         <div class="controls">
           <ul>
-              <li>
+            <li class="volumeUp">
+            <i class="fas fa-volume-up"></i>
+            </li>
+            <li class="rewind">
               <i class="fas fa-backward"></i>
             </li>
-            <li>
+            <li class="play-pause">
               <i class="fas fa-pause-circle"></i>
             </li>
-            <li>
-              <i class="fas fa-forward"></i>
+            <li class="forward">
+            <i class="fas fa-forward"></i>
+            </li>
+          <li class="mute">
+            <i class="fas fa-volume-off"></i>
             </li>
           </ul>
         </div>
 </section>
+<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

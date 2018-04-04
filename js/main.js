@@ -1,22 +1,22 @@
 // javaScript Document
 (() => {
-console.log('video stuff fried');
+console.log('video stuff fired');
 //add to the string protoype to cap the first letter
 // review this first thing next week!
 String.prototype.capIt = function() {return this.replace(this.charAt(), this.charAt().toUpperCase()); };
 
 // variables at the top
-const sigils = document.querySelectorAll('.sigilContainer');
-const lightbox = document.querySelector('.lightbox');
-const closeLightbox = lightbox.querySelector('.close-lightbox');
-const vidPlayer = document.querySelector('video');
-const tagline =document.querySelector('#tagline');
-const videoHeading =document.querySelector('#videoHeading');
-const playPause = document.querySelector('.controls');
-const rWnd = document.querySelector('.rewind');
-const ffwd = document.querySelector('.forward');
-const imageBanner = document.querySelector('#houseImages');
-
+const sigils = document.querySelectorAll('.sigilContainer'),
+lightbox = document.querySelector('.lightbox'),
+closeLightbox = lightbox.querySelector('.close-lightbox'),
+vidPlayer = document.querySelector('video'),
+tagLine = document.getElementById('tagLine'),
+playPause = document.querySelector('.play-pause'),
+ffwd = document.querySelector('.forward'),
+rwnd = document.querySelector('.rewind'),
+imageBanner = document.querySelector('#houseImages'),
+volumeUp = document.querySelector('.volumeUp'),
+volumeDown = document.querySelector('.mute');
 
 //methods / function in the middle
 function loadMovie() {
@@ -27,13 +27,9 @@ function loadMovie() {
 //2. grab the right video based on the class name --. the split yields the name
 
 var house = this.className.split(' ')[1].capIt();
-console.log(house)
 
-//3.put  the path together and make the video load and vidPlayer
 vidPlayer.src = `video/House-${house}.${vidPlayer.currentSrc.split('.')[1]}`;
-
-tagline.textContent = house;
-videoHeading.textContent = house;
+tagLine.textContent = house;
 
 vidPlayer.load();
 vidPlayer.play();
@@ -42,9 +38,8 @@ animateBanners(this.dataset.offset);
 }
 
 function animateBanners(offset) {
+  console.log(600 * offset);
 
-//aniamte the banners across the screen, using the offset as a multipler
-//600 is the width of each image -> the sum / product is how much it needs to move
   imageBanner.style.right = (offset * 600) + "px";
 }
 
@@ -56,31 +51,49 @@ function closeBox() {
 }
 
 function togglePlay() {
-//flip this according to the video state => if playing, pause it. If IT's paused, play it. and change the icon's class to shoe the correct state(play / pause data-icon attirbute)
-var theSVG = this.firstElementChild;
+  var theSVG = this.firstElementChild;
 
-if(vidPlayer.paused) {
-  theSVG.dataset.icon = "play-circle";
-  vidPlayer.play();
-}
-else {
-  theSVG.dataset.icon = "play-circle";
+  if (vidPlayer.paused) {
+    theSVG.dataset.icon = 'pause-circle';
+    vidPlayer.play();
+
+  }else{
+  theSVG.dataset.icon = 'play-circle';
+
+
   vidPlayer.pause();
-}
-}
-
-function rWindVid() {
-console.log('rewind')
+  }
 }
 
-function ffWdVid() {
-console.log('forward')
+function ffwdVid() {
+  console.log('forward');
+  vidPlayer.currentTime += 5;
 }
-// ADD EVENT LISTENER STACK
+
+function rwndVid() {
+  console.log('rewind');
+  vidPlayer.currentTime = 0;
+}
+
+function muteVol() {
+  vidPlayer.muted = true;
+}
+
+function increaseVol() {
+  vidPlayer.muted = false;
+}
+
+
+
+
+//events at the bottom
 sigils.forEach(sigil => sigil.addEventListener('click', loadMovie));
 closeLightbox.addEventListener('click', closeBox);
+
 vidPlayer.addEventListener('ended', closeBox);
 playPause.addEventListener('click', togglePlay);
-rWnd.addEventListener('click', rWindVid);
-ffWd.addEventListener('click', ffWdVid);
+ffwd.addEventListener('click', ffwdVid);
+rwnd.addEventListener('click', rwndVid);
+volumeDown.addEventListener('click', muteVol);
+volumeUp.addEventListener('click', increaseVol);
 })();
