@@ -21,6 +21,16 @@ h1 {
 	font-size:1.25em;
 }
 
+p {
+	font-family: 'GOT_font';
+	color:white;
+	margin-top:30px;
+	font-size:1em;
+    line-height: 50px;
+    text-align: center;
+}
+    
+
 main {
 	position:relative;
 	width:100%;
@@ -36,7 +46,7 @@ main {
 overflow:hidden;
 }
 
-#houseImages { position:relative; width:5000px; transition: all .5s; }
+#houseImages { position:relative; width:6000px; transition: all .5s; }
 #houseImages img { float:left; }
 
 #bottomNav { margin-top:30px; }
@@ -52,7 +62,7 @@ overflow:hidden;
 
 /* ----- image sprite ----- */
 .sigilContainer {
-	width:51px;
+	width:50px;
 	height:54px;
 	display:inline-block;
 	overflow:hidden;
@@ -81,8 +91,11 @@ overflow:hidden;
 .arryn { background-position:-253px -54px; }
 .arryn:hover { background-position:-253px 0px; }
 
-.targaryen { background-position:-304px -54px; }
-.targaryen:hover { background-position:-304px 0px; }
+.targaryen { background-position:-303px -54px; }
+.targaryen:hover { background-position:-303px 0px; }
+
+.frey { background-position:-353px -54px; }
+.frey:hover { background-position:-353px 0px; }
 /* ----- end image sprite ----- */
 
 /* ----- classes for transitions ----- */
@@ -113,10 +126,10 @@ overflow:hidden;
 
 .close-lightbox {
 	position: absolute;
-  right: 150px;
-top: 165px;
+  right: 64px;
+    top: 22px;
 	font-family: arial, helvetica, sans-serif;
-	font-size: 2em;
+	font-size: 3em;
 	font-weight: bold;
 	color: white;
 	cursor: pointer;
@@ -126,11 +139,11 @@ top: 165px;
 
 video {
 	width: 80%;
-	margin-top: 10%;
+	margin-top: 5%;
 	border: thin solid #949393;
 }
 
-.controls {margin-top: 1.5em; border: thin dashed white;}
+.controls {margin-top: 1.5em;}
 
 [data-icon]:not([data-icon:pause-circle]):not([data-icon:play-circle]) {
   font-size: 2em;
@@ -154,6 +167,6 @@ video {
   background-color: red;
    padding-bottom: 5px;
    border-radius: 50px;
-   
+
 
 }
